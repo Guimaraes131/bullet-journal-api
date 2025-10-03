@@ -17,5 +17,6 @@ public class Bullet {
     private Boolean isCompleted;
 
     @ManyToOne
+    @JoinColumn(name = "habit_id")
     private Habit habit;
 }
