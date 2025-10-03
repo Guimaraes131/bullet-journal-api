@@ -1,5 +1,6 @@
 package io.github.Guimaraes131.BulletJournal.service;
 
+import io.github.Guimaraes131.BulletJournal.controller.dto.PostHabit;
 import io.github.Guimaraes131.BulletJournal.model.Habit;
 import io.github.Guimaraes131.BulletJournal.repository.HabitRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,8 +14,10 @@ public class HabitService {
 
     private final HabitRepository repository;
 
-    public void create(Habit habit) {
-        repository.save(habit);
+    public void create(PostHabit dto) {
+        Habit entity = dto.toEntity();
+
+        repository.save(entity);
     }
 
     public List<Habit> index() {

@@ -1,5 +1,6 @@
 package io.github.Guimaraes131.BulletJournal.controller;
 
+import io.github.Guimaraes131.BulletJournal.controller.dto.PostHabit;
 import io.github.Guimaraes131.BulletJournal.model.Habit;
 import io.github.Guimaraes131.BulletJournal.service.HabitService;
 import lombok.RequiredArgsConstructor;
@@ -16,8 +17,8 @@ public class HabitController {
     private final HabitService service;
 
     @PostMapping
-    public ResponseEntity<Habit> create(@RequestBody Habit habit) {
-        service.create(habit);
+    public ResponseEntity<Void> create(@RequestBody PostHabit dto) {
+        service.create(dto);
 
         return ResponseEntity.ok().build();
     }
