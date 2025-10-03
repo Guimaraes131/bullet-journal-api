@@ -1,0 +1,6 @@
+CREATE TABLE tb_habit (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(16) NOT NULL,
+    metric VARCHAR(12) NOT NULL,
+    CONSTRAINT chk_metric CHECK (metric IN ('MILLILITERS', 'METERS', 'PAGES', 'MINUTES'))
+);
