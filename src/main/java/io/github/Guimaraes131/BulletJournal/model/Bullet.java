@@ -13,9 +13,6 @@ public class Bullet {
     private Long id;
     private Integer quantity;
 
-    @Column(name = "is_completed")
-    private Boolean isCompleted;
-
     @ManyToOne
     @JoinColumn(name = "habit_id")
     private Habit habit;
