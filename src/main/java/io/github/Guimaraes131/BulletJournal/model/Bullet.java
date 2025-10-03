@@ -1,0 +1,21 @@
+package io.github.Guimaraes131.BulletJournal.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "tb_bullet")
+public class Bullet {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Integer quantity;
+
+    @Column(name = "is_completed")
+    private Boolean isCompleted;
+
+    @ManyToOne
+    private Habit habit;
+}
