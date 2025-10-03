@@ -1,5 +1,6 @@
 package io.github.Guimaraes131.BulletJournal.controller;
 
+import io.github.Guimaraes131.BulletJournal.controller.dto.GetHabit;
 import io.github.Guimaraes131.BulletJournal.controller.dto.PostHabit;
 import io.github.Guimaraes131.BulletJournal.model.Habit;
 import io.github.Guimaraes131.BulletJournal.service.HabitService;
@@ -24,8 +25,8 @@ public class HabitController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Habit>> index() {
-        List<Habit> habits = service.index();
+    public ResponseEntity<List<GetHabit>> index() {
+        List<GetHabit> habits = service.index();
 
         return ResponseEntity.ok(habits);
     }

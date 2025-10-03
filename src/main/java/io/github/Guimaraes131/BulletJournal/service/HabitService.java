@@ -1,5 +1,6 @@
 package io.github.Guimaraes131.BulletJournal.service;
 
+import io.github.Guimaraes131.BulletJournal.controller.dto.GetHabit;
 import io.github.Guimaraes131.BulletJournal.controller.dto.PostHabit;
 import io.github.Guimaraes131.BulletJournal.model.Habit;
 import io.github.Guimaraes131.BulletJournal.repository.HabitRepository;
@@ -20,7 +21,9 @@ public class HabitService {
         repository.save(entity);
     }
 
-    public List<Habit> index() {
-        return repository.findAll();
+    public List<GetHabit> index() {
+        List<Habit> habits = repository.findAll();
+
+        return habits.stream().map(GetHabit::toDTO).toList();
     }
 }
